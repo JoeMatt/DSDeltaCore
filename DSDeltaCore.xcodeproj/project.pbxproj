@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B3C915142991A62B00842A8B /* DeltaCore in Frameworks */ = {isa = PBXBuildFile; productRef = B3C915132991A62B00842A8B /* DeltaCore */; };
 		BF0B260923E90F4A007BE38B /* texcache.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF0B260523E90DCD007BE38B /* texcache.cpp */; };
 		BF0F903623E63BEC0094BF82 /* DSTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = BF0F903423E63BEC0094BF82 /* DSTypes.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BF0F903723E63BEC0094BF82 /* DSTypes.m in Sources */ = {isa = PBXBuildFile; fileRef = BF0F903523E63BEC0094BF82 /* DSTypes.m */; };
@@ -413,6 +414,7 @@
 			files = (
 				BF275FF822F8C5C7005D98FE /* libz.tbd in Frameworks */,
 				BF275FEA22F8C41D005D98FE /* liblibDeSmuME.a in Frameworks */,
+				B3C915142991A62B00842A8B /* DeltaCore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -849,6 +851,9 @@
 				BF275FE822F8C415005D98FE /* PBXTargetDependency */,
 			);
 			name = DSDeltaCore;
+			packageProductDependencies = (
+				B3C915132991A62B00842A8B /* DeltaCore */,
+			);
 			productName = DSDeltaCore;
 			productReference = BFAEFD2522F4C40300F21EC9 /* DSDeltaCore.framework */;
 			productType = "com.apple.product-type.framework";
@@ -1246,13 +1251,18 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
-				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 6XVY5G3U44;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				GCC_WARN_UNUSED_FUNCTION = NO;
+				HEADER_SEARCH_PATHS = (
+					"\"$(SRCROOT)/desmume/desmume/src\"",
+					"\"$(SRCROOT)/desmume/desmume/src/libretro-common/include\"",
+					"\"$(SRCROOT)/desmume/desmume/src/metaspu/SoundTouch\"",
+					"\"$(SRCROOT)/libDeSmuME\"",
+					"\"$(SRCROOT)/../DeltaCore/DeltaCore/include\"",
+				);
 				INFOPLIST_FILE = DSDeltaCore/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1262,6 +1272,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.rileytestut.DSDeltaCore;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -1274,13 +1285,18 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
-				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 6XVY5G3U44;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				GCC_WARN_UNUSED_FUNCTION = NO;
+				HEADER_SEARCH_PATHS = (
+					"\"$(SRCROOT)/desmume/desmume/src\"",
+					"\"$(SRCROOT)/desmume/desmume/src/libretro-common/include\"",
+					"\"$(SRCROOT)/desmume/desmume/src/metaspu/SoundTouch\"",
+					"\"$(SRCROOT)/libDeSmuME\"",
+					"\"$(SRCROOT)/../DeltaCore/DeltaCore/include\"",
+				);
 				INFOPLIST_FILE = DSDeltaCore/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1290,6 +1306,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.rileytestut.DSDeltaCore;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1301,8 +1318,6 @@
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
 				CLANG_CXX_LIBRARY = "compiler-default";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6XVY5G3U44;
 				GCC_OPTIMIZATION_LEVEL = 3;
 				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
 				GCC_WARN_INHIBIT_ALL_WARNINGS = YES;
@@ -1318,8 +1333,6 @@
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
 				CLANG_CXX_LIBRARY = "compiler-default";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6XVY5G3U44;
 				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
 				GCC_WARN_INHIBIT_ALL_WARNINGS = YES;
 				OTHER_LDFLAGS = "-ObjC";
@@ -1360,6 +1373,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B3C915132991A62B00842A8B /* DeltaCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = DeltaCore;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = BFAEFD1C22F4C40300F21EC9 /* Project object */;
 }
