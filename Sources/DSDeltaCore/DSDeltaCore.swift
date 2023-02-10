@@ -12,6 +12,7 @@ import AVFoundation
 @_exported import DeltaCore
 @_exported import DSSwift
 @_exported import DSBridge
+@_exported import desmume
 
 extension DSGameInput: Input {
     public var type: InputType {
