@@ -9,41 +9,17 @@
 import Foundation
 import AVFoundation
 
-import DeltaCore
+@_exported import DeltaCore
+@_exported import DSSwift
+@_exported import DSBridge
 
-@objc public enum DSGameInput: Int, Input
-{
-    case up = 1
-    case down = 2
-    case left = 4
-    case right = 8
-    case a = 16
-    case b = 32
-    case x = 64
-    case y = 128
-    case l = 256
-    case r = 512
-    case start = 1024
-    case select = 2048
-    
-    case touchScreenX = 4096
-    case touchScreenY = 8192
-    
+extension DSGameInput: Input {
     public var type: InputType {
         return .game(.ds)
     }
-    
-    public var isContinuous: Bool {
-        switch self
-        {
-        case .touchScreenX, .touchScreenY: return true
-        default: return false
-        }
-    }
 }
 
-public struct DS: DeltaCoreProtocol
-{
+public struct DS: DeltaCoreProtocol {
     public static let core = DS()
     
     public var name: String { "DSDeltaCore" }
@@ -60,7 +36,7 @@ public struct DS: DeltaCoreProtocol
         return []
     }
     
-    public var emulatorBridge: EmulatorBridging { DSEmulatorBridge.shared }
+    public var emulatorBridge: EmulatorBridging { DSEmulatorBridge.shared as! EmulatorBridging }
     
     private init()
     {

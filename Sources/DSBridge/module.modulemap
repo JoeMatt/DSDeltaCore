@@ -1,0 +1,5 @@
+module DSBridge {
+    header "DSEmulatorBridge.h"
+    header "DSTypes.h"
+    export *
+}

@@ -8,17 +8,22 @@
 
 #import "DSEmulatorBridge.h"
 
-#import <UIKit/UIKit.h>
+@import DeltaCore;
+@import DeltaTypes;
 
-#import <DeltaCore/DeltaCore.h>
-#import <DeltaCore/DeltaCore-Swift.h>
+@import DSSwift;
+//@import desmume;
 
-#if STATIC_LIBRARY
-#import "DSDeltaCore-Swift.h"
-#else
-#import <DSDeltaCore/DSDeltaCore-Swift.h>
-#endif
-
+//#import <UIKit/UIKit.h>
+//
+//#import <DeltaCore/DeltaCore-Swift.h>
+//
+//#if STATIC_LIBRARY
+//#import "DSDeltaCore-Swift.h"
+//#else
+//#import <DSDeltaCore/DSDeltaCore-Swift.h>
+//#endif
+//
 // DeSmuME
 #include "types.h"
 #include "render3D.h"
